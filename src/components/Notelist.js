@@ -20,7 +20,8 @@ function NoteList({notes, removeNote}) {
     </div>
   ) :
   (
-<div className="empty" >Henüz not eklemediniz</div>
+<div className="empty" >
+You haven't added any notes yet</div>
   )
 }
 
