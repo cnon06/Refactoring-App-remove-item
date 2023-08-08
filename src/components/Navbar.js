@@ -1,6 +1,9 @@
-import React from 'react'
 
-function Navbar({notes}) {
+import React, {useContext } from "react";
+import {NoteContext} from "../contexts/notesContext";
+
+function Navbar() {
+  const { notes } = useContext(NoteContext);
   return (
    
     <div className="navbar">

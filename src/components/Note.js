@@ -1,6 +1,17 @@
-import React from "react";
+import React, {useContext } from "react";
+import {NoteContext} from "../contexts/notesContext";
 
-function Note({ index, note, removeNote }) {
+
+
+
+function Note({ index, note }) {
+  const { dispatch } = useContext(NoteContext);
+  const removeNote = (id) => {
+    dispatch({type:"REMOVE_NOTE",
+    id
+  
+  }) }
+
   return (
     <li key={index} onClick={() => removeNote(note.id)}>
       <h3 className="title">

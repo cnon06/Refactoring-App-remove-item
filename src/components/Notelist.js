@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useContext } from "react";
+import {NoteContext}   from "../contexts/notesContext";
 import Note from './Note';
 
-function NoteList({notes, removeNote}) {
+
+function NoteList() {
+
+  const { notes, dispatch } = useContext(NoteContext);
   return notes.length > 0 ?(
 
 
@@ -10,10 +14,8 @@ function NoteList({notes, removeNote}) {
     <ul >
     {notes.map((note, index) => {
       return (
-        <Note key={index} note={note} index={index} removeNote={removeNote}/>
-        // <li key={index}>
-        //   {note.id} {note.title}
-        // </li>
+        <Note key={index} note={note} index={index} dispatch={dispatch}/>
+       
       );
     })}
   </ul>
